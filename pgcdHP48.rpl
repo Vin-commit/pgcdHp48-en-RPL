@@ -1,0 +1,74 @@
+﻿
+
+   UN PROGRAMME EN LANGAGE RPL (Reverse Polish Lisp) CALCULANT LE PGCD :
+  
+   DUP2 
+   -
+   IF 0 >
+   THEN
+     SWAP
+   END			
+   OVER
+   MOD   'Application d'un algorithme utilisant le théorème d'Euclide :
+   DUP   'On étudie le reste de la divion entière entre les deux nombres présents sur la pile.
+   IF 0 >
+   THEN  'Si celui-ci est supérieur à zéro, on rappelle récursivement le programme avec les 2 éléments restants sur la pile,
+     PGCD
+   ELSE  'sinon, le nombre obtenu au niveau 2 est le pgcd des deux nombres.                            
+     DROP                         
+     "PGCD(1,2) : "             
+     SWAP
+     +    'Concaténation entre la chaîne et le dernier nombre obtenu.
+   END
+          ' -> La chaîne restante sur la pile indique le pgcd des 2 nombres présents au niveau 1 et 2 de la pile avant l'appel du
+ programme 'PGCD' par l'utilisateur.
+ 
+ 
+    LEXIQUE DES INSTRUCTIONS UTIlISÉES
+    
+   DUP2 : 
+     Duplique 2 éléments :
+     - copie celui sur le niveau 1 vers le niveau 3
+     - copie celui sur le niveau 2 vers le niveau 4
+  
+   - :
+     Soustrait 2 éléments : elt. niv. 2 - elt. niv. 1
+      
+   IF 0 > :
+     Compare la valeur de l'elt. sur le niv.1 avec 0 et suivant celle-ci poursuit :
+     - soit avec les instructions après THEN,
+     - soit avec les instructions après ELSE.
+             
+   THEN : 
+     Instructions pouvant être exécutées après un IF.
+
+   SWAP : 
+     Echange la position entre l'elt. sur le niv. 1 et celui sur le niv. 2
+ 
+   END :
+     Fin du bloc (ici conditionnel) des instructions commençant par le dernier IF (ici).
+
+   OVER :
+     Copie l'elt. du niv. 2 (qui deviendra après le niveau 3) vers le niv. 1.
+
+   MOD :
+     Effectue le modulo entre les elts. du niv. 2 et du niv. 1
+     
+   DUP :
+     Duplique 1 élément :
+     - copie celui sur le niv. 1 vers le niv. 2 (celui s'y trouvant avant est déplacé vers le niv. supérieur).
+
+   PGCD :
+     Ici nom de la variable contenant ce programme.
+
+   ELSE :
+     Instructions pouvant être exécutées après un IF (ici).
+
+   DROP :
+     Supprime l'elt. du niv.1 (les autres sont donc décalés de 1 niv.)
+
+   "PGCD(1,2) : " :
+     Il s'agit d'une chaîne de caractères placée sur le niv. 1.
+
+   + :
+     Ici, concaténation de l'elt. sur le niv. 1 (un nombre) avec l'elt. sur le niv. 2 (une chaîne).
