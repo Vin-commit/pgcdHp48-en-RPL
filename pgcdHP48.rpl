@@ -67,7 +67,7 @@
    DROP :
      Supprime l'elt. du niv.1 (les autres sont donc décalés de 1 niv.)
 
-   "PGCD(1,2) : " :
+   "PGCD(n1, n2) : " :
      Il s'agit d'une chaîne de caractères placée sur le niv. 1.
 
    + :
