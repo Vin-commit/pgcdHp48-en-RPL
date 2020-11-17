@@ -16,7 +16,7 @@
      PGCD
    ELSE  'sinon, le nombre obtenu au niveau 2 est le pgcd des deux nombres.                            
      DROP                         
-     "PGCD(1,2) : "             
+     "PGCD(n1, n2) : "             
      SWAP
      +    'Concaténation entre la chaîne et le dernier nombre obtenu.
    END
